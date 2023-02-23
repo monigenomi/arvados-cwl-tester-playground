@@ -1,8 +1,6 @@
 from arvados_cwl_tester import *
 
-
 arvados_project_uuid("pirca-j7d0g-b05ocf2z1ak34yx")
-
 
 def test_my_first_step_message_one():
     result = arvados_run(
