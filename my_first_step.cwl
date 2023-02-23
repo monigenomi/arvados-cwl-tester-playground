@@ -2,7 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 
 requirements:
-  dockerPull: ubuntu:20.01
+  DockerRequirement:
+    dockerPull: alpine:latest
+  ShellCommandRequirement: {}
 
 inputs:
   message:
@@ -18,11 +20,12 @@ arguments:
     valueFrom: $(inputs.message)
   - position: 2
     valueFrom: ">"
+    shellQuote: false
   - position: 3
-    valueFrom: $(inputs.input_file)
+    valueFrom: $(inputs.input_file.basename)
   
 outputs:
   output_file:
     type: File
     outputBinding:
-      glob: "$(inputs.input_file)"
+      glob: "$(inputs.input_file.basename)"
