@@ -41,6 +41,6 @@ def test_my_first_workflow_provided_messages():
             "first_message": "I am testing workflow!",
             "second_message": "My workflow is working!",
         },
-        project_uuid="ardev-j7d0g-x8khmrfng3nc1uo",
+        project_uuid="pirca-j7d0g-b05ocf2z1ak34yx",
     )
     assert "hello_world.txt" in result.files
